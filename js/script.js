@@ -44,6 +44,7 @@ for (let i = 0; i < boxes.length; i++)
         }
 
         // check who won
+
         CheckWinCondition();
     });
 }
@@ -121,7 +122,7 @@ function CheckWinCondition()
 
             if (aChild === bChild && bChild === cChild) 
             {
-                console.log(`${aChild} won`);
+                DeclareWinner(aChild);
 
                 return; // exit function as we have a winner
             }
@@ -144,7 +145,57 @@ function CheckWinCondition()
  
     if (isTie) 
     {
-        console.log("deu velha"); // no winner, game ends in a tie
+        DeclareWinner(); // no winner, game ends in a tie
+    }
+}
+
+// clears the game, declares the winner and clears the scoreboard
+
+function DeclareWinner(winningPlayer)
+{
+    let xScoreboard = document.querySelector("#scoreboard1");
+    let oScoreboard = document.querySelector("#scoreboard2");
+    let message = "";
+
+    if(winningPlayer == 'x')
+    {
+        xScoreboard.textContent = parseInt(xScoreboard.textContent) + 1;
+        message = "O jogador X Venceu!";
+    }
+    else if(winningPlayer == 'o')
+    {
+        oScoreboard.textContent = parseInt(oScoreboard.textContent) + 1;
+        message = "O jogador O Venceu!";
+    }
+    else
+    {
+        message = "Deu Velha!";
+    }
+
+    // show message
+
+    messageText.innerHTML = message;
+    messageContainer.classList.remove("hide");
+
+    // hide message
+
+    setTimeout(function() 
+    {
+        messageContainer.classList.add("hide");
+    }, 3000);
+
+    // reset moves
+
+    player1 = 0;
+    player2 = 0;
+
+    // clears the game
+
+    let boxesToRemove = document.querySelectorAll(".box div");
+
+    for(let box of boxesToRemove)
+    {
+        box.parentNode.removeChild(box);
     }
 }
     

@@ -74,9 +74,9 @@ h1{
 
 /* hide */
 
-/* .hide{
+.hide{
     display: none !important;
-} */
+}
 
 /* scoreboard */
 
@@ -120,5 +120,5 @@ h1{
     font-size: 50px;
     color: white;
     background-color: black;
-    display: none;
+    padding: 20px;
 }
