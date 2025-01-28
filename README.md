@@ -39,6 +39,10 @@ O jogo da velha é uma aplicação interativa onde dois jogadores podem alternar
    - Todas as células são preenchidas sem que haja um vencedor (empate).
 5. Clique no botão de reiniciar para começar uma nova partida.
 
+## Resultado
+
+https://github.com/user-attachments/assets/bb68e3f0-cbf0-433a-bedb-bdb08ceff9e8
+
 ## Créditos
 - Projeto desenvolvido com a orientação do professor **Matheus Battisti** no curso "JavaScript do Básico ao Avançado".
 
